@@ -23,12 +23,35 @@
   "bugs": {
     "url": "https://github.com/yannickebongue/ngx-material-time-select/issues"
   },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "exports": {
+    ".": {
+      "sass": "./_index.scss"
+    },
+    "./prebuilt-themes/indigo-pink.css": {
+      "style": "./src/themes/indigo-pink.css"
+    },
+    "./prebuilt-themes/deeppurple-amber.css": {
+      "style": "./src/themes/deeppurple-amber.css"
+    },
+    "./prebuilt-themes/pink-bluegrey.css": {
+      "style": "./src/themes/pink-bluegrey.css"
+    },
+    "./prebuilt-themes/purple-green.css": {
+      "style": "./src/themes/purple-green.css"
+    },
+    "./prebuilt-themes/*": {
+      "style": "./themes/*.css"
+    }
+  },
   "peerDependencies": {
-    "@angular/animations": "~7.2.3",
-    "@angular/cdk": "~7.3.0",
-    "@angular/common": "~7.2.3",
-    "@angular/core": "~7.2.3",
-    "@angular/material": "^7.3.0",
+    "@angular/animations": ">=14.0.0 || >=15.0.0",
+    "@angular/cdk": ">=14.0.0 || >=15.0.0",
+    "@angular/common": ">=14.0.0 || >=15.0.0",
+    "@angular/core": ">=14.0.0 || >=15.0.0",
+    "@angular/material": ">=14.0.0 || >=15.0.0",
     "moment": "^2.24.0"
   }
 }

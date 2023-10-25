@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+@import "./lib/time-select.component-theme";
+
+@mixin ngx-material-time-select-typography($config: null) {
+  @if $config == null {
+    $config: mat.define-legacy-typography-config();
+  }
+
+  @include mat-time-select-typography($config);
+}
+
+@mixin ngx-material-time-select-theme($theme) {
+  @include mat-time-select-theme($theme);
+}

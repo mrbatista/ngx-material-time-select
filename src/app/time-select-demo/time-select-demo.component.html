@@ -11,14 +11,14 @@
   </mat-form-field>
 </p>
 <p>
-  <mat-form-field color="accent">
+  <mat-form-field [color]="color">
     <mat-label>Min time</mat-label>
     <input matInput [matTimeSelect]="minTimeSelect" [(ngModel)]="minTime"
            [disabled]="inputDisabled" [max]="maxTime">
     <mat-time-select-toggle matSuffix [for]="minTimeSelect"></mat-time-select-toggle>
     <mat-time-select #minTimeSelect [disabled]="timeSelectDisabled"></mat-time-select>
   </mat-form-field>
-  <mat-form-field color="accent">
+  <mat-form-field [color]="color">
     <mat-label>Max time</mat-label>
     <input matInput [matTimeSelect]="maxTimeSelect" [(ngModel)]="maxTime"
            [disabled]="inputDisabled" [min]="minTime">
@@ -27,7 +27,7 @@
   </mat-form-field>
 </p>
 <p>
-  <mat-form-field color="accent">
+  <mat-form-field [color]="color">
     <mat-label>Start at time</mat-label>
     <input matInput [matTimeSelect]="startAtPicker" [(ngModel)]="startAt"
            [disabled]="inputDisabled">

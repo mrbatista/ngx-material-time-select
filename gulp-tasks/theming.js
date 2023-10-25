@@ -7,12 +7,12 @@ const dir = `projects/${lib}`;
 const out = `dist/${lib}`;
 
 function theming() {
-  const entryPoint = path.join(dir, 'src', 'theming', '_all-theme.scss');
-  const allDedupeGlobs = [path.join(dir, 'src', '**/*.scss')];
+  const entryPoint = path.join(dir, 'src', '_index.scss');
+  const allDedupeGlobs = [path.join(dir, 'src', '*.scss')];
   const includePaths = [];
-  const ignoredImports = ['~@angular/material/theming'];
-  return new Bundler().Bundle(entryPoint, allDedupeGlobs, includePaths, ignoredImports).then(result => {
-    fs.writeFileSync(path.join(out, '_theming.scss'), result.bundledContent);
+  const ignoredImports = ['@angular/material'];
+  return new Bundler().bundle(entryPoint, allDedupeGlobs, includePaths, ignoredImports).then(result => {
+    fs.writeFileSync(path.join(out, '_index.scss'), result.bundledContent);
   });
 }
 

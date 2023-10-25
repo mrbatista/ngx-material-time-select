@@ -25,7 +25,7 @@ import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {ESCAPE, UP_ARROW} from '@angular/cdk/keycodes';
 import {Overlay, OverlayConfig, OverlayRef, PositionStrategy, ScrollStrategy} from '@angular/cdk/overlay';
 import {ComponentPortal, PortalInjector} from '@angular/cdk/portal';
-import {CanColor, CanColorCtor, mixinColor, ThemePalette} from '@angular/material';
+import { CanColor, mixinColor, ThemePalette } from '@angular/material/core';
 import {merge, Observable, Subject, Subscription} from 'rxjs';
 import {filter, take} from 'rxjs/operators';
 import {DurationInputArg1, DurationInputArg2, Moment, unitOfTime} from 'moment';
@@ -70,7 +70,7 @@ export class MatTimeSelectContentBase {
 
 }
 
-export const _MatTimeSelectContentMixinBase: CanColorCtor & typeof MatTimeSelectContentBase =
+export const _MatTimeSelectContentMixinBase: typeof MatTimeSelectContentBase =
   mixinColor(MatTimeSelectContentBase);
 
 /**
@@ -109,6 +109,8 @@ export class MatTimeSelectContentComponent<D> extends _MatTimeSelectContentMixin
 
   /** The hour clock type. Possible values: 12: 12 hour clock; 24: 24 hour clock */
   hourClock: number;
+
+  defaultColor: ThemePalette;
 
   /**
    * The time period of the currently selected time of the time select content. Possible values: `am` when selected time hour is less
@@ -290,12 +292,16 @@ export class MatTimeSelectComponent<D> implements OnDestroy, CanColor {
   _timeSelectInput: MatTimeSelectInputDirective<D>;
 
   /** Emits when the time select has been opened. */
+  // eslint-disable-next-line @angular-eslint/no-output-rename, @angular-eslint/no-output-native
   @Output('open') openStream: EventEmitter<void> = new EventEmitter<void>();
   /** Emits when the time select has been closed. */
+  // eslint-disable-next-line @angular-eslint/no-output-rename, @angular-eslint/no-output-native
   @Output('close') closeStream: EventEmitter<void> = new EventEmitter<void>();
 
   /** The id for the time select popup. */
   id = `mat-time-select-${timeSelectUid++}`;
+
+  defaultColor: ThemePalette;
 
   /** The initial time of the time select. */
   @Input()

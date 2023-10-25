@@ -1,4 +1,4 @@
-import {DateAdapter} from '@angular/material';
+import { DateAdapter } from '@angular/material/core';
 import {Moment} from 'moment';
 
 /** Adapts date object to be usable as a date time by cdk-based components that work with dates. */

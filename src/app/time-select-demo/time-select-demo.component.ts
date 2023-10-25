@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {ThemePalette} from '@angular/material';
-import {FormControl} from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
+import {UntypedFormControl} from '@angular/forms';
 import {MatTimeSelectInputEvent} from '../../../projects/time-select/src/lib/time-select-input.directive';
 
 @Component({
@@ -20,7 +20,7 @@ export class TimeSelectDemoComponent {
   lastTimeChange: Date | null;
   color: ThemePalette;
 
-  timeCtrl = new FormControl();
+  timeCtrl = new UntypedFormControl();
 
   onTimeInput = (e: MatTimeSelectInputEvent<Date>) => this.lastTimeInput = e.value;
   onTimeChange = (e: MatTimeSelectInputEvent<Date>) => this.lastTimeChange = e.value;

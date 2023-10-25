@@ -3,5 +3,9 @@
   "dest": "../../dist/time-select",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "assets" : [
+    { "input": "src", "glob": "*.scss", "output": "styles"},
+    { "input": "src/styles", "glob": "**/*.scss", "output": "styles" }
+  ]
 }

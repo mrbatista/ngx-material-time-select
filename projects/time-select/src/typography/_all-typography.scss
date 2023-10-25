@@ -1,9 +1,0 @@
-@import "../lib/time-select.component-theme";
-
-@mixin ngx-material-time-select-typography($config: null) {
-  @if $config == null {
-    $config: mat-typography-config();
-  }
-
-  @include mat-time-select-typography($config);
-}

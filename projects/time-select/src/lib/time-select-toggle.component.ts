@@ -16,7 +16,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {MatButton} from '@angular/material';
+import { MatLegacyButton as MatButton } from '@angular/material/legacy-button';
 import {merge, of, Subscription} from 'rxjs';
 import {MatTimeSelectIntl} from './time-select-intl.service';
 import {MatTimeSelectComponent} from './time-select.component';
@@ -43,14 +43,15 @@ export class MatTimeSelectToggleComponent<D> implements AfterContentInit, OnChan
   private _disableRipple: boolean;
 
   /** Time select instance that the button will toggle. */
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('for') timeSelect: MatTimeSelectComponent<D>;
   /** Tabindex for the toggle. */
   @Input() tabIndex: number | null;
 
   /** Custom icon set by the consumer. */
-  @ContentChild(MatTimeSelectToggleIconDirective) customIcon: MatTimeSelectToggleIconDirective;
+  @ContentChild(MatTimeSelectToggleIconDirective, /* TODO: add static flag */ {}) customIcon: MatTimeSelectToggleIconDirective;
   /** Underlying button element. */
-  @ViewChild('button') button: MatButton;
+  @ViewChild('button', { static: true }) button: MatButton;
 
   /** Whether the toggle button is disabled. */
   @Input()

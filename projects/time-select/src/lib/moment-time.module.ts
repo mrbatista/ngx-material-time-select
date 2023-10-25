@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import {TimeAdapter} from './time-adapter.service';
 import {MAT_TIME_FORMATS} from './time-formats';
 import {MomentTimeAdapter} from './moment-time-adapter.service';

@@ -13,11 +13,11 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
-import {CanDisableRippleCtor, mixinDisableRipple} from '@angular/material';
+import { mixinDisableRipple } from '@angular/material/core';
 import {MatTimeUnitSelectComponent} from './time-unit-select.component';
 
 export class MatTimeUnitOptionBase { }
-export const _MatTimeUnitOptionMixinBase: CanDisableRippleCtor & typeof MatTimeUnitOptionBase =
+export const _MatTimeUnitOptionMixinBase: typeof MatTimeUnitOptionBase =
   mixinDisableRipple(MatTimeUnitOptionBase);
 
 /** Single time option inside a `<mat-time-unit-select>` element */
@@ -39,7 +39,7 @@ export class MatTimeUnitOptionComponent<D> extends _MatTimeUnitOptionMixinBase i
   @Input() disableRipple: boolean;
 
   /** The element containing the display text of the option. */
-  @ViewChild('text') _text: ElementRef<HTMLElement>;
+  @ViewChild('text', { static: true }) _text: ElementRef<HTMLElement>;
 
   /** @docs-private */
   @HostBinding('class') readonly class = 'mat-time-unit-option';

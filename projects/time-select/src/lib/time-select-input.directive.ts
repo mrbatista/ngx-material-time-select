@@ -23,7 +23,9 @@ import {
 } from '@angular/forms';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
 import {DOWN_ARROW} from '@angular/cdk/keycodes';
-import {MAT_INPUT_VALUE_ACCESSOR, MatFormField, ThemePalette} from '@angular/material';
+import { ThemePalette } from '@angular/material/core';
+import { MatLegacyFormField as MatFormField } from '@angular/material/legacy-form-field';
+import { MAT_LEGACY_INPUT_VALUE_ACCESSOR as MAT_INPUT_VALUE_ACCESSOR } from '@angular/material/legacy-input';
 import {Observable, Subject, Subscription} from 'rxjs';
 import {TimeAdapter} from './time-adapter.service';
 import {MAT_TIME_FORMATS, MatTimeFormats} from './time-formats';
